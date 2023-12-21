@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NutriCareUAS"
         tools:targetApi="31">
+
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -25,17 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <receiver
-            android:name=".receiver.MidnightReceiver"
-            android:enabled="true"
-            android:exported="true"
-            android:permission="TODO"
-            tools:ignore="ExportedReceiver">
-            <intent-filter>
-                <action android:name="CLEAR_ALL_DATA_ALARM" />
-            </intent-filter>
-        </receiver>
 
         <activity
             android:name=".UpdateSavedFoodActivity"
@@ -75,8 +65,7 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".AuthActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="false" />

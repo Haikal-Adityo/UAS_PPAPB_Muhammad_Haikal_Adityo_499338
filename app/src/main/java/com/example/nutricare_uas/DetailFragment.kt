@@ -1,11 +1,8 @@
 package com.example.nutricare_uas
 
 import android.annotation.SuppressLint
-import android.app.AlarmManager
 import android.app.AlertDialog
-import android.app.PendingIntent
 import android.content.ContentValues
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -19,7 +16,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nutricare_uas.databinding.FragmentDetailBinding
 import com.example.nutricare_uas.model.User
-import com.example.nutricare_uas.receiver.MidnightReceiver
 import com.example.nutricare_uas.recyclerViewAdapter.SavedFoodRecyclerViewAdapter
 import com.example.nutricare_uas.savedFood.SavedFood
 import com.example.nutricare_uas.savedFood.SavedFoodDao
@@ -27,7 +23,6 @@ import com.example.nutricare_uas.savedFood.SavedFoodRoomDatabase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
-import java.util.Calendar
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -88,8 +83,6 @@ class DetailFragment : Fragment() {
 
             ItemTouchHelper(simpleCallback).attachToRecyclerView(rvFood)
         }
-
-        setMidnightAlarm()
 
         return view
     }
@@ -234,36 +227,6 @@ class DetailFragment : Fragment() {
         val totalCalorie = savedFoodList.sumOf { it.totalCalorie }
         binding.txtTotalCalorie.text = "$totalCalorie kcal"
     }
-
-    @SuppressLint("ShortAlarm")
-    fun setMidnightAlarm() {
-        val midnightIntent = Intent(requireContext(), MidnightReceiver::class.java)
-        midnightIntent.action = "CLEAR_ALL_DATA_ALARM"
-
-        val pendingIntent = PendingIntent.getBroadcast(
-            requireContext(),
-            0,
-            midnightIntent,
-            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
-        )
-
-        val alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
-
-        val calendar = Calendar.getInstance().apply {
-            timeInMillis = System.currentTimeMillis()
-            set(Calendar.HOUR_OF_DAY, 4)
-            set(Calendar.MINUTE, 0)
-            set(Calendar.SECOND, 0)
-        }
-
-        alarmManager.setRepeating(
-            AlarmManager.RTC_WAKEUP,
-            calendar.timeInMillis,
-            AlarmManager.INTERVAL_DAY,
-            pendingIntent
-        )
-    }
-
 
     override fun onResume() {
         super.onResume()
