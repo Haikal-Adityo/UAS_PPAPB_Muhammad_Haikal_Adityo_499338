@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "164634926921",
+    "project_id": "nutricare-uas",
+    "storage_bucket": "nutricare-uas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164634926921:android:6ef3c57e6b63c975f3c498",
+        "android_client_info": {
+          "package_name": "com.example.nutricare_uas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcSZ27FNp4Xj-7RcuLnB9mK7DaU5iali4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

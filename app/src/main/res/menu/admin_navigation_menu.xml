@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/adminListFragment"
+        android:title="Food List"
+        android:icon="@drawable/baseline_format_list_bulleted_24" />
+
+    <item
+        android:id="@+id/adminCrudFragment"
+        android:title="Add Food"
+        android:icon="@drawable/baseline_add_circle_outline_24" />
+
+    <item
+        android:id="@+id/adminNotificationFragment"
+        android:title="Notification"
+        android:icon="@drawable/baseline_notification_add_24" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:title="Profile"
+        android:icon="@drawable/baseline_person_2_24" />
+
+</menu>

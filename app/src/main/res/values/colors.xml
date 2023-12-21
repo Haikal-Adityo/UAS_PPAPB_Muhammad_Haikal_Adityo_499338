@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#84AE48</color>
+    <color name="dark_green">#46682F</color>
+    <color name="colorPrimaryRipple">#6684AE48</color>
+
+    <color name="breakfastColor">#F7B301</color>
+    <color name="lunchColor">#0F9EEF</color>
+    <color name="dinnerColor">#8012D1</color>
+
+    <color name="disabled">#99FFFFFF</color>
+</resources>

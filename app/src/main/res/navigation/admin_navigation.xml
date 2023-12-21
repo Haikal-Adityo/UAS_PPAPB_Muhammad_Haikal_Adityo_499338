@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_navigation"
+    app:startDestination="@id/adminListFragment">
+
+    <fragment
+        android:id="@+id/adminListFragment"
+        android:name="com.example.nutricare_uas.AdminListFragment"
+        android:label="fragment_admin_list"
+        tools:layout="@layout/fragment_admin_list" />
+    <fragment
+        android:id="@+id/adminCrudFragment"
+        android:name="com.example.nutricare_uas.AdminCrudFragment"
+        android:label="fragment_admin_crud"
+        tools:layout="@layout/fragment_admin_crud" >
+        <action
+            android:id="@+id/action_adminCrudFragment_to_adminListFragment"
+            app:destination="@id/adminListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminNotificationFragment"
+        android:name="com.example.nutricare_uas.AdminNotificationFragment"
+        android:label="fragment_admin_notification"
+        tools:layout="@layout/fragment_admin_notification" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.nutricare_uas.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
